@@ -9,8 +9,7 @@ const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 
-const apiKey = 're_Yh5zV4HM_3i1AnLC4adMzjXG8RGvN9hZh';
-const resend = new Resend(apiKey);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.get('/', (req, res) => {
     res.send('Server is running');

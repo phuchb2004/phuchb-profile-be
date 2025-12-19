@@ -9,7 +9,7 @@ const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 
-const apiKey = re_Yh5zV4HM_3i1AnLC4adMzjXG8RGvN9hZh;
+const apiKey = 're_Yh5zV4HM_3i1AnLC4adMzjXG8RGvN9hZh';
 const resend = new Resend(apiKey);
 
 app.get('/', (req, res) => {

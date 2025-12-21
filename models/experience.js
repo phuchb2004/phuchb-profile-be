@@ -1,17 +1,34 @@
 const mongoose = require('mongoose');
 
+const LocalizedString = {
+    vi: {
+        type: String,
+        required: true
+    },
+    en: {
+        type: String,
+        required: true
+    }
+};
+
 const ProjectSchema = new mongoose.Schema({
     projectId: {
         type: Number,
         required: true
     },
     title: {
-        type: String,
-        required: true,
+        vi: { 
+            type: String,
+            required: true 
+        },
+        en: { 
+            type: String,
+            required: true 
+        }
     },
     role: {
-        type: String,
-        required: true,
+        vi: { type: String, required: true },
+        en: { type: String, required: true }
     },
     period: {
         type: String,
@@ -20,9 +37,10 @@ const ProjectSchema = new mongoose.Schema({
     techStack: [
         String
     ],
-    description: [
-        String
-    ]
+    description: {
+        vi: [ String ],
+        en: [ String ]
+    }
 });
 
 const CompanySchema = new mongoose.Schema({

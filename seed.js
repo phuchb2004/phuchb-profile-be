@@ -9,27 +9,66 @@ const sampleData = [
         projects: [
             {
                 projectId: 101,
-                title: 'Hệ thống quán lý nhân sự',
-                role: 'Frontend Developer',
+                title: { 
+                    vi: 'Hệ thống quản lý nhân sự', 
+                    en: 'HR Management System' 
+                },
+                role: { 
+                    vi: 'Frontend Developer', 
+                    en: 'Frontend Developer' 
+                },
                 period: '2025',
                 techStack: ['ReactJS'],
-                description: ['Hệ thống quản lý nhân sự cho nội bộ công ty, hỗ trợ quản lý thông tin nhân viên, dự án, tính lương, phân quyền và xuất báo cáo.']
+                description: {
+                    vi: [
+                        'Hệ thống quản lý nhân sự cho nội bộ công ty, hỗ trợ quản lý thông tin nhân viên, dự án, tính lương, phân quyền và xuất báo cáo.'
+                    ],
+                    en: [
+                        'Internal HR management system, supporting employee information management, projects, payroll, role-based access control, and reporting.'
+                    ]
+                }
             },
             {
                 projectId: 102,
-                title: 'Hệ thống quản lý giấy chuyển viện',
-                role: 'Backend Developer',
+                title: { 
+                    vi: 'Hệ thống quản lý giấy chuyển viện', 
+                    en: 'Hospital Transfer Management System' 
+                },
+                role: { 
+                    vi: 'Backend Developer', 
+                    en: 'Backend Developer' 
+                },
                 period: '2025',
                 techStack: ['ASP.NET'],
-                description: ['Phần mềm quản lý giấy chuyển viện, in thông tin bệnh nhân (tên, mã số,...) phục vụ quản lý nhập viện và điều trị.']
+                description: {
+                    vi: [
+                        'Phần mềm quản lý giấy chuyển viện, in thông tin bệnh nhân (tên, mã số,...) phục vụ quản lý nhập viện và điều trị.'
+                    ],
+                    en: [
+                        'Software for managing hospital transfer papers, printing patient information (name, ID, etc.) for admission and treatment management.'
+                    ]
+                }
             },
             {
                 projectId: 103,
-                title: 'Hệ thống in vòng tay cho bệnh nhân',
-                role: 'Backend Developer',
+                title: { 
+                    vi: 'Hệ thống in vòng tay cho bệnh nhân', 
+                    en: 'Wristband Printing System'
+                },
+                role: { 
+                    vi: 'Backend Developer', 
+                    en: 'Backend Developer' 
+                },
                 period: '2025',
                 techStack: ['ASP.NET'],
-                description: ['Phần mềm kết nối hệ thống quản lý bệnh viện với máy in vòng tay, in thông tin bệnh nhân (mã số, tên, địa chỉ, mã QR) phục vụ quản lý nhập viện và điều trị.']
+                description: {
+                    vi: [
+                        'Phần mềm kết nối hệ thống quản lý bệnh viện với máy in vòng tay, in thông tin bệnh nhân (mã số, tên, địa chỉ, mã QR) phục vụ quản lý nhập viện và điều trị.'
+                    ],
+                    en: [
+                        'Software connecting the hospital management system with wristband printers, printing patient info (ID, name, address, QR code) for admission.'
+                    ]
+                }
             }
         ]
     },
@@ -39,11 +78,24 @@ const sampleData = [
         projects: [
             {
                 projectId: 201,
-                title: 'Hệ thống chấm công và quản lý nhân sự',
-                role: 'Fullstack Developer',
+                title: { 
+                    vi: 'Hệ thống chấm công và quản lý nhân sự', 
+                    en: 'Timekeeping and HR System' 
+                },
+                role: { 
+                    vi: 'Fullstack Developer', 
+                    en: 'Fullstack Developer' 
+                },
                 period: '2025',
                 techStack: ['Nextjs, Laravel'],
-                description: ['Hệ thống quản lý chấm công, thông báo và đăng ký ot dành cho toàn bộ nhân sự']
+                description: {
+                    vi: [
+                        'Hệ thống quản lý chấm công, thông báo và đăng ký OT dành cho toàn bộ nhân sự'
+                    ],
+                    en: [
+                        'System for managing timekeeping, notifications, and Overtime (OT) registration for all personnel.'
+                    ]
+                }
             }
         ]
     }

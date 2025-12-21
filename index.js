@@ -24,8 +24,6 @@ const connectDB = async () => {
     }
 }
 
-connectDB();
-
 app.get('/', (req, res) => {
     res.send('Server is running');
 });
@@ -93,6 +91,8 @@ app.get('/api/experience', async (req, res) => {
     }
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+    });
+})

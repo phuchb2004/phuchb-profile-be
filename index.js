@@ -1,7 +1,9 @@
 require('dotenv').config();
 const express = require('express');
+const mongoose = require('mongoose');
 const { Resend } = require('resend');
 const cors = require('cors');
+const Experience = require('./models/experience');
 
 const app = express();
 const PORT = process.env.PORT;
@@ -10,6 +12,19 @@ app.use(cors());
 app.use(express.json());
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+const connectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log("MongoDB connected");
+    }
+    catch (error) {
+        console.error("MongoDB connect failed", error);
+        process.exit(1);
+    }
+}
+
+connectDB();
 
 app.get('/', (req, res) => {
     res.send('Server is running');
@@ -20,7 +35,7 @@ app.post('/api/contact', async (req, res) => {
 
     if (!name || !email || !message) {
         return res.status(400).json({
-            succes: false,
+            success: false,
             message: "Fields are not allowed to be empty"
         });
     }
@@ -61,6 +76,19 @@ app.post('/api/contact', async (req, res) => {
         return res.status(500).json({
             success: false,
             message: "Internal Server Error"
+        });
+    }
+});
+
+app.get('/api/experience', async (req, res) => {
+    try {
+        const data = await Experience.find().sort({ companyId: 1 });
+        res.json(data);
+    }
+    catch (error) {
+        console.error("database error", error);
+        res.status(500).json({
+            message: error.message
         });
     }
 });

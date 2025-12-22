@@ -1,16 +1,5 @@
 const mongoose = require('mongoose');
 
-const LocalizedString = {
-    vi: {
-        type: String,
-        required: true
-    },
-    en: {
-        type: String,
-        required: true
-    }
-};
-
 const ProjectSchema = new mongoose.Schema({
     projectId: {
         type: Number,

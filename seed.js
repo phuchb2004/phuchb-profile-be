@@ -1,8 +1,9 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const Experience = require('./models/experience');
+const Certificate = require('./models/certificate');
 
-const sampleData = [
+const sampleDataExp = [
     {
         companyId: 1,
         companyName: 'Ominext',
@@ -101,15 +102,44 @@ const sampleData = [
     }
 ];
 
+const sampleDateCertificate = [
+    {
+        certificateId: 1,
+        title: {
+            "vi": "Khóa học SQL",
+            "en": "SQL Course"
+        },
+        description: "Codecademy - 6/2024"
+    },
+    {
+        certificateId: 2,
+        title: {
+            "vi": "Khóa học C++",
+            "en": "C++ Course"
+        },
+        description: "Codecademy - 7/2024"
+    },
+    {
+        certificateId: 3,
+        title: {
+            "vi": "Khóa học Java",
+            "en": "Java Course"
+        },
+        description: "Codecademy - 8/2024"
+    }
+];
+
 const seedDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
         console.log("Connected to MongoDB");
 
         await Experience.deleteMany({});
+        await Certificate.deleteMany({});
         console.log("Cleared old data");
 
-        await Experience.insertMany(sampleData);
+        await Experience.insertMany(sampleDataExp);
+        await Certificate.insertMany(sampleDateCertificate);
         console.log("Added new data");
         
         process.exit();

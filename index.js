@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const { Resend } = require('resend');
 const cors = require('cors');
 const Experience = require('./models/experience');
+const Certificate = require('./models/certificate');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -84,7 +85,20 @@ app.get('/api/experience', async (req, res) => {
         res.json(data);
     }
     catch (error) {
-        console.error("database error", error);
+        console.error("database experience error", error);
+        res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
+app.get('/api/certificate', async (req, res) => {
+    try {
+        const data = await Certificate.find().sort({ certificateId: 1});
+        res.json(data);
+    }
+    catch (error) {
+        console.error("database certificate error", error);
         res.status(500).json({
             message: error.message
         });

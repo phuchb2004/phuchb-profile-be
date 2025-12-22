@@ -18,7 +18,7 @@ const sampleDataExp = [
                     vi: 'Frontend Developer', 
                     en: 'Frontend Developer' 
                 },
-                period: '2025',
+                period: '2/2025 - 4/2025',
                 techStack: ['ReactJS'],
                 description: {
                     vi: [
@@ -39,7 +39,7 @@ const sampleDataExp = [
                     vi: 'Backend Developer', 
                     en: 'Backend Developer' 
                 },
-                period: '2025',
+                period: '5/2025 - 7/2025',
                 techStack: ['ASP.NET'],
                 description: {
                     vi: [
@@ -60,7 +60,7 @@ const sampleDataExp = [
                     vi: 'Backend Developer', 
                     en: 'Backend Developer' 
                 },
-                period: '2025',
+                period: '7/2025',
                 techStack: ['ASP.NET'],
                 description: {
                     vi: [
@@ -87,7 +87,7 @@ const sampleDataExp = [
                     vi: 'Fullstack Developer', 
                     en: 'Fullstack Developer' 
                 },
-                period: '2025',
+                period: '8/2025 - 12/2025',
                 techStack: ['Nextjs, Laravel'],
                 description: {
                     vi: [

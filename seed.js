@@ -2,6 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const Experience = require('./models/experience');
 const Certificate = require('./models/certificate');
+const Tech = require('./models/technologies');
 
 const sampleDataExp = [
     {
@@ -129,6 +130,39 @@ const sampleDateCertificate = [
     }
 ];
 
+const sampleDataTech = [
+    {
+        techId: 1,
+        techName: "ReactJS",
+        category: "Frontend",
+        techUrl: "https://react.dev/"
+    },
+    {
+        techId: 2,
+        techName: "NodeJS",
+        category: "Backend",
+        techUrl: "https://nodejs.org/en"
+    },
+    {
+        techId: 3,
+        techName: "MongoDB",
+        category: "Database",
+        techUrl: "https://www.mongodb.com/"
+    },
+    {
+        techId: 4,
+        techName: "AWS Amplify",
+        category: "Deployment",
+        techUrl: "https://ap-southeast-2.console.aws.amazon.com/amplify/apps"
+    },
+    {
+        techId: 5,
+        techName: "Render",
+        category: "Deployment",
+        techUrl: "https://render.com/"
+    }
+];
+
 const seedDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
@@ -136,10 +170,12 @@ const seedDB = async () => {
 
         await Experience.deleteMany({});
         await Certificate.deleteMany({});
+        await Tech.deleteMany({});
         console.log("Cleared old data");
 
         await Experience.insertMany(sampleDataExp);
         await Certificate.insertMany(sampleDateCertificate);
+        await Tech.insertMany(sampleDataTech);
         console.log("Added new data");
         
         process.exit();

@@ -5,6 +5,7 @@ const { Resend } = require('resend');
 const cors = require('cors');
 const Experience = require('./models/experience');
 const Certificate = require('./models/certificate');
+const Tech = require('./models/technologies');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -23,7 +24,7 @@ const connectDB = async () => {
         console.error("MongoDB connect failed", error);
         process.exit(1);
     }
-}
+};
 
 app.get('/', (req, res) => {
     res.send('Server is running');
@@ -105,8 +106,21 @@ app.get('/api/certificate', async (req, res) => {
     }
 });
 
+app.get('/api/tech', async (req, res) => {
+    try {
+        const data = await Tech.find().sort({ techId: 1 });
+        res.json(data);
+    }
+    catch (error) {
+        console.error("database tech error", error);
+        res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
 connectDB().then(() => {
     app.listen(PORT, () => {
         console.log(`Server is running on http://localhost:${PORT}`);
     });
-})
+});

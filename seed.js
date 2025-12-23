@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Experience = require('./models/experience');
 const Certificate = require('./models/certificate');
 const Tech = require('./models/technologies');
+const certificate = require('./models/certificate');
 
 const sampleDataExp = [
     {
@@ -11,11 +12,11 @@ const sampleDataExp = [
         projects: [
             {
                 projectId: 101,
-                title: { 
+                title: {
                     vi: 'Hệ thống quản lý nhân sự', 
                     en: 'HR Management System' 
                 },
-                role: { 
+                role: {
                     vi: 'Frontend Developer', 
                     en: 'Frontend Developer' 
                 },
@@ -32,11 +33,11 @@ const sampleDataExp = [
             },
             {
                 projectId: 102,
-                title: { 
+                title: {
                     vi: 'Hệ thống quản lý giấy chuyển viện', 
                     en: 'Hospital Transfer Management System' 
                 },
-                role: { 
+                role: {
                     vi: 'Backend Developer', 
                     en: 'Backend Developer' 
                 },
@@ -53,11 +54,11 @@ const sampleDataExp = [
             },
             {
                 projectId: 103,
-                title: { 
+                title: {
                     vi: 'Hệ thống in vòng tay cho bệnh nhân', 
                     en: 'Wristband Printing System'
                 },
-                role: { 
+                role: {
                     vi: 'Backend Developer', 
                     en: 'Backend Developer' 
                 },
@@ -110,7 +111,8 @@ const sampleDateCertificate = [
             "vi": "Khóa học SQL",
             "en": "SQL Course"
         },
-        description: "Codecademy - 6/2024"
+        description: "Codecademy - 6/2024",
+        certificateUrl: "https://www.codecademy.com/profiles/PhucCoDeGioi2004/certificates/042a4e5884e3eb6ea1f2a12be6abb851"
     },
     {
         certificateId: 2,
@@ -118,7 +120,8 @@ const sampleDateCertificate = [
             "vi": "Khóa học C++",
             "en": "C++ Course"
         },
-        description: "Codecademy - 7/2024"
+        description: "Codecademy - 7/2024",
+        certificateUrl: "https://www.codecademy.com/profiles/PhucCoDeGioi2004/certificates/b74a2390dfc4127fa5d43fe147425ad0"
     },
     {
         certificateId: 3,
@@ -126,7 +129,8 @@ const sampleDateCertificate = [
             "vi": "Khóa học Java",
             "en": "Java Course"
         },
-        description: "Codecademy - 8/2024"
+        description: "Codecademy - 8/2024",
+        certificateUrl: "https://www.codecademy.com/profiles/PhucCoDeGioi2004/certificates/d3f89367b558583e361640f778191345"
     }
 ];
 

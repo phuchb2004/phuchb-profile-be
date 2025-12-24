@@ -18,4 +18,4 @@ const TechSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Tech', TechSchema);
+module.exports = mongoose.model('Technology', TechSchema);

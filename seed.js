@@ -2,8 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const Experience = require('./models/experience');
 const Certificate = require('./models/certificate');
-const Tech = require('./models/technologies');
-const certificate = require('./models/certificate');
+const Technology = require('./models/technologies');
 
 const sampleDataExp = [
     {
@@ -174,12 +173,12 @@ const seedDB = async () => {
 
         await Experience.deleteMany({});
         await Certificate.deleteMany({});
-        await Tech.deleteMany({});
+        await Technology.deleteMany({});
         console.log("Cleared old data");
 
         await Experience.insertMany(sampleDataExp);
         await Certificate.insertMany(sampleDateCertificate);
-        await Tech.insertMany(sampleDataTech);
+        await Technology.insertMany(sampleDataTech);
         console.log("Added new data");
         
         process.exit();

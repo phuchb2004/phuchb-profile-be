@@ -23,10 +23,10 @@ const sampleDataExp = [
                 techStack: ['ReactJS'],
                 description: {
                     vi: [
-                        'Hệ thống quản lý nhân sự cho nội bộ công ty, hỗ trợ quản lý thông tin nhân viên, dự án, tính lương, phân quyền và xuất báo cáo.'
+                        'Xây dựng và triển khai hệ thống quản lý nhân sự cho nội bộ công ty, hỗ trợ quản lý thông tin nhân viên, dự án, tính lương và xuất báo cáo.'
                     ],
                     en: [
-                        'Internal HR management system, supporting employee information management, projects, payroll, role-based access control, and reporting.'
+                        'Developed and deployed an internal HR Management System (HRMS) to support employee records, project management, payroll processing, and report generation.'
                     ]
                 }
             },
@@ -92,10 +92,10 @@ const sampleDataExp = [
                 techStack: ['Nextjs, Laravel'],
                 description: {
                     vi: [
-                        'Hệ thống quản lý chấm công, thông báo và đăng ký OT dành cho toàn bộ nhân sự'
+                        'Bảo trì và nâng cấp hệ thống phần mềm cho nội bộ công ty bao gồm các module lớn: Điểm danh, thông báo, đăng ký OT, quản lý dự án và thông tin nhân sự.'
                     ],
                     en: [
-                        'System for managing timekeeping, notifications, and Overtime (OT) registration for all personnel.'
+                        'Maintained and upgraded the internal company software system, including key modules: Attendance, Notifications, OT Registration, Project Management, and HR Information.'
                     ]
                 }
             }
